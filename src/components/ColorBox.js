@@ -4,20 +4,21 @@ import { ColorConsumer } from '../contexts/color';
 const ColorBox = () => {
   return (
     <ColorConsumer>
-      {(value) => (
+      {/* 비구조화 할당 */}
+      {({ state }) => (
         <>
           <div
             style={{
               width: '128px',
               height: '128px',
-              background: value.state.color,
+              background: state.color,
             }}
           />
           <div
             style={{
               width: '64px',
               height: '64px',
-              background: value.state.subcolor,
+              background: state.subcolor,
             }}
           />
         </>
