@@ -1,29 +1,25 @@
-import React from 'react';
-import { ColorConsumer } from '../contexts/color';
+import React, { useContext } from 'react';
+import ColorContext from '../contexts/color';
 
 const ColorBox = () => {
+  const { state } = useContext(ColorContext);
   return (
-    <ColorConsumer>
-      {/* 비구조화 할당 */}
-      {({ state }) => (
-        <>
-          <div
-            style={{
-              width: '128px',
-              height: '128px',
-              background: state.color,
-            }}
-          />
-          <div
-            style={{
-              width: '64px',
-              height: '64px',
-              background: state.subcolor,
-            }}
-          />
-        </>
-      )}
-    </ColorConsumer>
+    <>
+      <div
+        style={{
+          width: '128px',
+          height: '128px',
+          background: state.color,
+        }}
+      />
+      <div
+        style={{
+          width: '64px',
+          height: '64px',
+          background: state.subcolor,
+        }}
+      />
+    </>
   );
 };
 
